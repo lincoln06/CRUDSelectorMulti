@@ -45,7 +45,7 @@ namespace CRUDSelectorMulti
             OutputTbx.Clear();
             OutputTbx.Text = RegistrationProcess(selectedCrud, user);
         }
-        private ICrud CheckSelection()
+        private IElement CheckSelection()
         {
             switch (ChooseCrudCbx.SelectedIndex)
             {
@@ -58,12 +58,12 @@ namespace CRUDSelectorMulti
             }
             return null;
         }
-        private string RegistrationProcess<T>(T selectedCrud, User user) where T : ICrud
+        private string RegistrationProcess<T>(T selectedCrud, User user) where T : IElement
         {
             selectedCrud.Register(user);
             return $"Użytkownik został dodany do {ChooseCrudCbx.Text}";
         }
-        private string LoginProcess<T>(T selectedCrud, string email, string password) where T : ICrud
+        private string LoginProcess<T>(T selectedCrud, string email, string password) where T : IElement
         {
             User user = selectedCrud.Login(email, password);
             if (user == null) return "Brak danych";

@@ -1,13 +1,8 @@
 ﻿using Microsoft.Data.Sqlite;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CRUDSelectorMulti
 {
-    public class SqliteCRUD : ICrud
+    public class SqliteCRUD : IElement
     {
         private SqliteConnection connection = new SqliteConnection("Data Source=Service.db");
         public User Login(string email, string password)

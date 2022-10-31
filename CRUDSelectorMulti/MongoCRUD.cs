@@ -1,13 +1,9 @@
 ﻿using MongoDB.Driver;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CRUDSelectorMulti
 {
-    class MongoCRUD : ICrud
+    class MongoCRUD : IElement
     {
         readonly IMongoCollection<User> collection = new MongoClient().GetDatabase("Service").GetCollection<User>("Users");
         public void Register(User user)

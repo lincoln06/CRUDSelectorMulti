@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace CRUDSelectorMulti
 {
-    public interface ICrud
+    internal class Game
     {
-        public abstract User Login(string email, string password);
-        public abstract void Register(User user);
     }
-}
 }
